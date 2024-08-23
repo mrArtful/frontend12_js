@@ -9,6 +9,17 @@ const nums1 = [5, 6, 92, 47, 12, -18, 33, 8];
 const names = ['jack', 'sarah', 'mary', 'joey', 'chris', 'samantha'];
 const namesObject = [];
 
+names.forEach(name => {
+    const upperName = `${name[0].toUpperCase()}${name.slice(1).toLowerCase()}`;
+    namesObject.push({
+        name: upperName,
+        nameLength: name.length,
+    })
+})
+
+console.log(namesObject);
+
+
 
 
 // Напишите программу которая в массив numsRes добавит объекты
