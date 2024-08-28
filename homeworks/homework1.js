@@ -2,11 +2,18 @@
 // выведет результат в консоль
 const nums1 = [5, 6, 92, 47, 12, -18, 33, 8];
 
+let total = 0;
+
+nums1.forEach(num => {
+    total += num
+})
+
+console.log(total);
 
 
 // Напишите программу которая добавит в массив namesObject объекты
 // с двумя парами { name: "имя с большой буквы", nameLength: "длина имени"}
-const names = ['jack', 'sarah', 'mary', 'joey', 'chris', 'samantha'];
+const names = ['jack', 'sarah', 'MARY', 'jOey', 'chris', 'samantha'];
 const namesObject = [];
 
 names.forEach(name => {
@@ -27,12 +34,28 @@ console.log(namesObject);
 const nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const numsRes = [];
 
+nums2.forEach(num => {
+    numsRes.push({
+        number: num,
+        square: num ** 2,
+        cube: num ** 3,
+    })
+})
+
+console.log(numsRes);
+
 
 
 // Используйте forEach чтобы в массив 'reversedNumberRow'
 // добавить те же числа, но в обратном порядке.
 const numberRow = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const reversedNumberRow = [];
+
+numberRow.forEach(num => {
+    reversedNumberRow.unshift(num);
+})
+
+console.log(reversedNumberRow);
 
 
 
@@ -62,3 +85,8 @@ const cars = [
         price: 50000
     } 
 ];
+
+cars.forEach(car => {
+    console.log(`This is ${car.color} ${car.make}. It costs ${car.price}€.`);
+})
+

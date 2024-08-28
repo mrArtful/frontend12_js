@@ -34,6 +34,15 @@ const people = [
         age: 17
     }
 ]
+const adults = [];
+
+people.forEach(person => {
+    if (person.age >= 18) {
+        adults.push(person.name);
+    }
+});
+
+console.log(adults);
 
 
 
