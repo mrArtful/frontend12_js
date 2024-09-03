@@ -2,6 +2,15 @@
 // четных чисел в массиве
 
 const numsArray = [1, 12, 34, 71, 14, 12, 33, 70, 82, 81, 9, 19, 90];
+let sum = 0;
+
+numsArray.forEach(num => {
+    if (num % 2 === 0) {
+        sum += num;
+    }
+})
+
+console.log(sum);
 
 
 
@@ -49,10 +58,17 @@ console.log(adults);
 // напишите программу которая проанализирует данный массив и выведет в консоль самую длинную строку
 
 const strings = ['Star', 'Planet', 'Comet', 'Interstellar', 'Space'];
+let longest = '';
 
+strings.forEach(str => {
+    if (str.length > longest.length) {
+        longest = str;
+    }
+})
 
+console.log(longest);
 
-// напишите программу которая возьмёт из данного массива наисенования книг которые вышли в этом году
+// напишите программу которая возьмёт из данного массива наименования книг которые вышли в этом году
 // и добавит их в новый массив
 
 const books = [
@@ -83,10 +99,30 @@ const books = [
     }
 ];
 
+const freshBooks = [];
+
+books.forEach(book => {
+    if (book.release === 2023) {
+        freshBooks.push(book.title);
+    }
+})
+
+console.log(freshBooks);
+
 
 // Напишите программу которая проанализирует данный массив и найдёт в нем наибольшее число кратное трём
 
-const numbers = [3, 15, 23, 56, 66, 71, 12, 90];
+const numbers = [3, 15, 23, 56, 66, 71, 12, 90, 120, 96];
+let largest = 0;
+
+numbers.forEach(num => {
+    if (num % 3 === 0 && num > largest) {
+        largest = num;
+    }
+})
+
+console.log(largest);
+
 
 
 // напишите программу которая найдёт самого старшего человека в данном массиве с объектами
@@ -117,3 +153,17 @@ const people2 = [
         age: 17
     }
 ];
+
+let oldestPerson = {};
+
+people2.forEach(person => {
+    if (oldestPerson.age) {
+        if (person.age > oldestPerson.age) {
+            oldestPerson = person;
+        }
+    } else {
+        oldestPerson = person;
+    }
+})
+
+console.log(oldestPerson);
