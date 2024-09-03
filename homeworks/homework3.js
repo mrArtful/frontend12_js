@@ -173,13 +173,48 @@ const cars = [
 // Попробуйте оформить каждое задание в виде функции
 // 1. Отфильтруйте бензиновые машины и добавьте в новый массив марку и модель
 // пример: ['BMW 520i', 'Audi A5', 'VW Golf']
+const petrolCars = (fuelType) => {
+  const result = cars.filter(car => {
+    if (car.specifications.fuelType === fuelType) {
+      return true;
+    }
+  }).map(car => {
+    return `${car.make} ${car.model}`;
+  })
+  return result;
+}
 
-
+console.log(petrolCars('Gasoline'));
 
 
 // 2. Отфильтруйте машины которые стоят больше 30000 и добавьте в новй массив объекты
 // пример объектов: {make: 'BMW', model: '528i', ownerName: 'Jack Smith'}
 
+const expensiveCars = (price) => {
+  const result = cars.filter(car => {
+    if (car.price > price) {
+      return true;
+    }
+  }).map(car => {
+    return {
+      make: car.make,
+      model: car.model,
+      ownerName: car.owner.name,
+    }
+  })
+  return result;
+}
+
+console.log(expensiveCars(30000));
 
 
 // 3. Используйте метод map() чтобы создать новый массив из владельцев
+const owners = cars.map(car => {
+  return {
+    [car.owner.name]: {
+      ...car.owner.address
+    }
+  }
+})
+
+console.log(owners);
